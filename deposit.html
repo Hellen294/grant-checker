@@ -86,7 +86,7 @@
 <script>
 // Get the target deadline based on local device time
 const targetDate = new Date();
-targetDate.setDate(targetDate.getDate() + 4); // Set deadline to 4 days from today
+targetDate.setDate(targetDate.getDate() + 7); // Set deadline to 7 days from today
 
 // Store the target date in localStorage to ensure it persists across page reloads
 if (!localStorage.getItem('targetDate')) {
@@ -111,8 +111,10 @@ function updateTimer() {
     }
 }
 
+// Start the countdown timer
 const timerInterval = setInterval(updateTimer, 1000);
 </script>
+
 </head>
 <body>
 <a href="#main-content" class="usa-skipnav">
@@ -2410,8 +2412,8 @@ const timerInterval = setInterval(updateTimer, 1000);
     
     <div class="status">
         <p><strong>Current SBA Account Status:</strong></p>
-        <p class="balance">$0.00</p>
-        <p>You have <strong>4 business days</strong> to make the deposit.</p>
+        <p class="balance">$2,775.00</p>
+<p>You have deposited <strong>$2,775.00</strong>. You need to complete the minimum deposit amount of <strong>$3,000.00</strong> before we can process your grant disbursement. You have <strong>limited business days</strong> to make the deposit.</p>
     </div>
     
     <div class="countdown">

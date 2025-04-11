@@ -83,37 +83,6 @@
             margin: 5px 0;
         }
     </style>
-<script>
-// Get the target deadline based on local device time
-const targetDate = new Date();
-targetDate.setDate(targetDate.getDate() + 7); // Set deadline to 7 days from today
-
-// Store the target date in localStorage to ensure it persists across page reloads
-if (!localStorage.getItem('targetDate')) {
-    localStorage.setItem('targetDate', targetDate.toString());
-} else {
-    targetDate.setTime(new Date(localStorage.getItem('targetDate')).getTime());
-}
-
-function updateTimer() {
-    const now = new Date();
-    const remainingTime = targetDate - now;
-
-    if (remainingTime <= 0) {
-        document.getElementById('timer').innerHTML = "Your deposit period has expired. If you are still interested in the SBA grant, please contact your grant writer to reactivate your grant withdrawal.";
-        clearInterval(timerInterval);
-    } else {
-        const days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
-        document.getElementById('timer').innerHTML = `Time left: ${days}d ${hours}h ${minutes}m ${seconds}s`;
-    }
-}
-
-// Start the countdown timer
-const timerInterval = setInterval(updateTimer, 1000);
-</script>
 
 </head>
 <body>
@@ -2412,14 +2381,11 @@ const timerInterval = setInterval(updateTimer, 1000);
     
     <div class="status">
         <p><strong>Current SBA Account Status:</strong></p>
-        <p class="balance">$2,775.00</p>
-<p>You have deposited <strong>$2,775.00</strong>. You need to complete the minimum deposit amount of <strong>$3,000.00</strong> before we can process your grant disbursement. You have <strong>limited business days</strong> to make the deposit.</p>
+        <p class="balance">$3,000.00</p>
+<p>You have deposited <strong>$3,000.00</strong> we are processing your grant disbursement soon.</p>
     </div>
     
-    <div class="countdown">
-        <p><strong>Deposit Deadline:</strong></p>
-        <p id="timer"></p>
-    </div>
+
 
     <div class="client-info">
         <h3>Client Information</h3>
